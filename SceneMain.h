@@ -21,7 +21,7 @@ public:
 	void draw();
 
 	// ショットを打つ
-	bool createShot(Vec2 pos);
+	bool createShot(Vec2 pos, bool isPlayer);
 	
 private:
 	// ショットの最大数

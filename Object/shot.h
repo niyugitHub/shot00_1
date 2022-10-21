@@ -19,9 +19,16 @@ public:
 	// 表示
 	void draw();
 
+	// 弾の進行方向決定
+	void setVec(Vec2  vec) { m_vec = vec; }
+
 	// 存在するか
 	bool isExist() const { return m_isExist; }	// 値を取得
 	void setExist(bool isExist){m_isExist = isExist; }	// 値を変更
+
+	// プレイヤーが撃った弾か
+	bool isPlayerShot() const { return m_isPlayerShot; }
+	void setPlayerShot(bool isPlayerShot) { m_isPlayerShot = isPlayerShot; }
 
 	// 敵との当たり判定
 	bool isCol(Enemy& enemy);
@@ -36,4 +43,7 @@ private:
 	Vec2	m_pos;
 	// 移動
 	Vec2	m_vec;
+	// プレイヤーが撃った球かどうか
+	bool m_isPlayerShot;
+
 };
