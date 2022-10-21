@@ -32,6 +32,8 @@ private:
 	SceneMain* m_pMain;
 	int m_handle;
 
+	int m_shotInterval;
+
 	// •\Ž¦ˆÊ’u
 	Vec2 m_pos;
 	// ˆÚ“®
