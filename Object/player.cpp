@@ -2,6 +2,9 @@
 #include "game.h"
 #include "player.h"
 
+#include "SceneMain.h"
+
+
 namespace
 {
 	// X方向、Y方向の最大速度
@@ -9,7 +12,11 @@ namespace
 	constexpr float kAcc = 0.4f;
 }
 
-Player::Player()
+Player::Player() : 
+	m_pMain(nullptr),
+	m_handle(-1),
+	m_pos(),
+	m_vec()
 {
 	m_handle = -1;
 }
@@ -59,7 +66,16 @@ void Player::update()
 	{
 		m_vec.x *= 0.9f;
 	}
+	// キー入力処理
+	if (padState & PAD_INPUT_1)
+	{
+		if (m_pMain)
+		{
+			m_pMain->createShot(m_pos);
+		}
+	}
 	m_pos += m_vec;
+
 }
 
 void Player::draw()

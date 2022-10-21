@@ -19,6 +19,9 @@ public:
 	void update();
 	// 毎フレームの描画
 	void draw();
+
+	// ショットを打つ
+	bool createShot(Vec2 pos);
 	
 private:
 	// ショットの最大数
